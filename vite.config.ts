@@ -9,6 +9,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  preview: {
+    host: true,                     // permite acesso externo
+    port: 8080,                     // porta que o EasyPanel usará
+    allowedHosts: ["mneme.app.br"], // <<< IMPORTANTE
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
